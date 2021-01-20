@@ -33,3 +33,4 @@ sigul_fas_password: ThisIsNotThePassword!
 # general location when installed.
 #sigul_bridge_cert_nickname:
 #sigul_server_cert_nickname:
+sigul_nss_dir: /etc/pki/tls/sigul

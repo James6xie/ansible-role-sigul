@@ -17,7 +17,7 @@ unix-user: sigul
 unix-group: sigul
 
 [nss]
-nss-dir: /var/lib/sigul
+nss-dir: {{ sigul_nss_dir }}
 
 {% if sigul_nss_password %}
 nss-password: {{ sigul_nss_password }}
