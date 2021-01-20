@@ -18,3 +18,14 @@
 - name: Configure server
   import_tasks: server.yml
   when: sigul_type == 'server'
+
+# Ports
+- name: Configure firewalld
+  ansible.posix.firewalld:
+    port: "{{ item }}"
+    permanent: true
+    state: enabled
+    immediate: true
+  loop:
+    - 44333/tmp
+    - 44334/tmp
