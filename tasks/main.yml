@@ -1,2 +1,20 @@
 ---
-# tasks
+# Sigul tasks
+# Is it even defined?
+- name: Check is sigul type is defined
+  assert:
+    that:
+      - sigul_type | mandatory
+      - sigul_type == 'bridge' or sigul_type == 'server' | mandatory
+    fail_msg: "sigul_type is either not defined or set incorrectly"
+    success_msg: "sigul_type is defined"
+
+# Bridge
+- name: Configure bridge
+  import_tasks: bridge.yml
+  when: sigul_type == 'bridge'
+
+# Server
+- name: Configure server
+  import_tasks: server.yml
+  when: sigul_type == 'server'

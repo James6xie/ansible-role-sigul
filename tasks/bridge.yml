@@ -1,0 +1,34 @@
+---
+# Bridge Tasks
+- name: Install the sigul bridge
+  yum:
+    name: sigul-bridge
+    state: present
+  tags:
+    - sigul
+    - bridge
+    - packages
+
+- name: Configure bridge.conf
+  template:
+    src: etc/sigul/bridge.conf.j2
+    dest: /etc/sigul/bridge.conf
+    mode: '0640'
+    owner: sigul
+    group: sigul
+  tags:
+    - sigul
+    - bridge
+    - config
+
+- name: Configure the koji conf
+  template:
+    src: etc/koji-primary.conf.j2
+    dest: /etc/koji-primary.conf
+    owner: root
+    group: root
+    mode: '0644'
+  tags:
+    - sigul
+    - bridge
+    - config

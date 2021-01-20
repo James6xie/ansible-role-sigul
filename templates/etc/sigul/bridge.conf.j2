@@ -1,0 +1,30 @@
+[bridge]
+bridge-cert-nickname: {{ sigul_bridge_cert_nickname }}
+max-rpms-payload-size: 70737418240
+server-listen-port: 44333
+client-listen-port: 44334
+required-fas-group: {{ sigul_fas_group }}
+fas-user-name: {{ sigul_fas_username }}
+fas-password: {{ sigul_fas_password }}
+
+[koji]
+koji-instances: primary
+koji-config-primary: /etc/koji-primary.conf
+koji-config: /etc/koji-primary.conf
+
+[daemon]
+unix-user: sigul
+unix-group: sigul
+
+[nss]
+nss-dir: /var/lib/sigul
+
+{% if sigul_nss_password %}
+nss-password: {{ sigul_nss_password }}
+{% else %}
+# There is no password set
+nss-password:
+{% endif %}
+
+nss-min-tls: tls1.2
+nss-max-tls: tls1.3

@@ -1,2 +1,35 @@
 ---
-# ansible default variables - most variables live here
+# Default variables for sigul - overridden in a playbook
+sigul_server_packages:
+  - sigul-server
+  - rpm-sign
+  - tar
+  - bzip2
+  - p11-kit
+  - openssl-pkcs11
+  - gnutls-utils
+  - pcsc-lite
+  - opensc
+  - gnupg
+
+# This should be defined in the playbook. There is no default. It must be set
+# to either bridge or server
+#sigul_type: ...
+# Set your IPA realm in your playbook
+sigul_ipa_realm: "ROCKYLINUX.ORG"
+# Set this to the kerberos principal you need in your playbook
+sigul_principal: "sigul/{{ inventory_hostname }}@{{ sigul_ipa_realm }}"
+sigul_keytab: /etc/sigul.keytab
+# nickname of the NSS database certificate
+sigul_cert_nickname: sign-bridge
+sigul_fas_group: signers
+sigul_fas_username: rockyautomation
+sigul_fas_password: ThisIsNotThePassword!
+
+# If the NSS certificate database has a password, set it in the playbook
+#sigul_nss_password:
+
+# The bridge and server certs are obviously different but sit in the same
+# general location when installed.
+#sigul_bridge_cert_nickname:
+#sigul_server_cert_nickname:

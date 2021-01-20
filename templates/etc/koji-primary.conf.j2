@@ -1,0 +1,24 @@
+[koji]
+realm = {{ sigul_ipa_realm }}
+;url of XMLRPC server
+server = {{ kojid_hub_url }}
+
+;url of web interface
+weburl = {{ kojid_web_url }}
+
+;url of package download site
+topurl = {{ kojid_files_url }}
+
+;path to the koji top directory
+;topdir = {{ kojid_mount }}
+
+; https ca, not for ssl auth
+serverca = {{ kojid_ca_bundle }}
+
+anon_retry = true
+authtype = kerberos
+principal = {{ sigul_principal }}
+keytab = {{ sigul_keytab }}
+krb_rdns = false
+
+ccache = /tmp/sigul.ccache

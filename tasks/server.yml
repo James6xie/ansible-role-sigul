@@ -1,0 +1,31 @@
+---
+# TODO: Add policy kit rules for yubi
+# Server Tasks
+- name: Install sigul server packages
+  yum:
+    name: "{{ sigul_server_packages }}"
+    state: present
+  tags:
+    - sigul
+    - server
+
+- name: Enable the pcscd service
+  service:
+    name: pcscd
+    state: started
+    enabled: true
+  tags:
+    - sigul
+    - server
+
+- name: Configure sigul server
+  template:
+    src: etc/sigul/server.conf.j2
+    dest: /etc/sigul/server.conf
+    owner: sigul
+    group: sigul
+    mode: '0640'
+  tags:
+    - sigul
+    - server
+    - config

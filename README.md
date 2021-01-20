@@ -1,7 +1,9 @@
 CI Badge
 
-# Ansible template role
-basic Role to use going forward because I forget pieces
+# Ansible Sigul Role
+Role that helps installing and configuring Sigul.
+
+**Note**: While this installs the bridge or server component, it does NOT assist with requesting or making NSS databases for the certificates. It also does not start the service. You will need to do this in your own playbook.
 
 ## Getting started
 Ensure all dependencies are installed and then follow the below process
@@ -36,5 +38,3 @@ There are numerous other options within the [defaults/main.yml](./defaults/main.
 
 ## Changelog
 The [changelog](./CHANGELOG.md) is stored externally
-
-
