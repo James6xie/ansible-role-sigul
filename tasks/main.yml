@@ -27,5 +27,5 @@
     state: enabled
     immediate: true
   loop:
-    - 44333/tmp
-    - 44334/tmp
+    - 44333/tcp
+    - 44334/tcp
