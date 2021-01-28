@@ -19,7 +19,7 @@ unix-group: sigul
 [nss]
 nss-dir: {{ sigul_nss_dir }}
 
-{% if sigul_nss_password %}
+{% if sigul_nss_password is defined %}
 nss-password: {{ sigul_nss_password }}
 {% else %}
 # There is no password set
