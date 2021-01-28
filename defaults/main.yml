@@ -34,3 +34,9 @@ sigul_fas_password: ThisIsNotThePassword!
 #sigul_bridge_cert_nickname:
 #sigul_server_cert_nickname:
 sigul_nss_dir: /etc/pki/tls/sigul
+
+sigul_koji_hub_url: "https://koji.rockylinux.org/kojihub"
+sigul_koji_web_url: "https://koji.rockylinux.org/koji"
+sigul_koji_files_url: "https://koji.rockylinux.org/kojifiles"
+sigul_koji_mount: "/mnt/koji"
+sigul_koji_ca_bundle: "/etc/pki/tls/certs/ca-bundle.crt"
