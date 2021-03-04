@@ -16,14 +16,14 @@ sigul_server_packages:
 # to either bridge or server
 #sigul_type: ...
 # Set your IPA realm in your playbook
-sigul_ipa_realm: "ROCKYLINUX.ORG"
+sigul_ipa_realm: "CCLINUX.ORG"
 # Set this to the kerberos principal you need in your playbook
 sigul_principal: "sigul/{{ inventory_hostname }}@{{ sigul_ipa_realm }}"
 sigul_keytab: /etc/sigul.keytab
 # nickname of the NSS database certificate
 sigul_cert_nickname: sign-bridge
 sigul_fas_group: signers
-sigul_fas_username: rockyautomation
+sigul_fas_username: circleautomation
 sigul_fas_password: ThisIsNotThePassword!
 
 # If the NSS certificate database has a password, set it in the playbook
@@ -35,8 +35,8 @@ sigul_fas_password: ThisIsNotThePassword!
 #sigul_server_cert_nickname:
 sigul_nss_dir: /etc/pki/tls/sigul
 
-sigul_koji_hub_url: "https://koji.rockylinux.org/kojihub"
-sigul_koji_web_url: "https://koji.rockylinux.org/koji"
-sigul_koji_files_url: "https://koji.rockylinux.org/kojifiles"
+sigul_koji_hub_url: "https://koji.cclinux.org/kojihub"
+sigul_koji_web_url: "https://koji.cclinux.org/koji"
+sigul_koji_files_url: "https://koji.cclinux.org/kojifiles"
 sigul_koji_mount: "/mnt/koji"
 sigul_koji_ca_bundle: "/etc/pki/tls/certs/ca-bundle.crt"
